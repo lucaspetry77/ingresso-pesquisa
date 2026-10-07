@@ -1,0 +1,14 @@
+.examples { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 40px 24px; color: #f2f3f3; background: radial-gradient(ellipse at 30% 0, #183a33, transparent 65%), #080b0a; }
+.examples main { max-width: 880px; width: 100%; }
+.examples-kicker { margin-top: 42px; color: #76a397; text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; }
+.examples h1 { max-width: 20ch; margin: 16px 0; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.08; letter-spacing: -.04em; }
+.examples main > p:not(.examples-kicker) { color: #a3b0aa; line-height: 1.6; }
+.examples-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 36px; }
+.examples-options a { display: block; padding: 28px; border: 1px solid #30423b; border-radius: 18px; background: #0f1c17; color: inherit; text-decoration: none; }
+.examples-options a:hover { border-color: #70a08f; }
+.examples-options a:focus-visible { outline: 2px solid #88c7b2; outline-offset: 5px; }
+.examples-options span { color: #708b7f; font-size: .75rem; }
+.examples-options h2 { margin: 20px 0 12px; font-size: 1.3rem; line-height: 1.3; }
+.examples-options p { color: #a3b0aa; line-height: 1.6; }
+.examples-options strong { display: block; margin-top: 28px; color: #a2d3bf; font-size: .875rem; }
+@media (max-width: 600px) { .examples-options { grid-template-columns: 1fr; } }

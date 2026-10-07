@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Finalizando inscrição — Asimov</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#050505" />
+    <link rel="preload" href="/ds/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/css/styles.css?v=35" />
+    <link rel="stylesheet" href="/css/form.css?v=37" />
+    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css" />
+    <!-- Cor via ?tema=<chave de ds/themes.js> (padrão: teal_asimov) -->
+    <script src="/ds/themes.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/config.js"></script>
+    <script src="/js/tracking.js"></script>
+</head>
+<!-- Template "form": uma pergunta por tela + ingresso que se preenche com as respostas.
+     Fundo liso de propósito — sem Aura/WebGL nem paisagem. -->
+<body class="fm-body">
+
+
+
+<div id="fm-loading" class="loading-center"><div class="loader"></div></div>
+
+<div id="fm-error" class="empty-state hidden" role="alert">
+    <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+    <h3>Fluxo não encontrado</h3>
+    <p>Verifique o link e tente novamente.</p>
+</div>
+
+<main id="fm-stage" class="fm-stage hidden">
+
+    <section class="fm-flow" aria-live="polite">
+        <p class="fm-intro" id="fm-intro" hidden></p>
+        <div class="fm-progress" id="fm-progress" aria-hidden="true"></div>
+        <div id="fm-qbox"></div>
+    </section>
+
+    <aside class="fm-ticket-wrap" aria-label="Seu ingresso">
+        <!-- Terminal de emissão (tipo "form_print"). No tipo "form" estes contêineres
+             são display: contents e os elementos .fm-print-only ficam ocultos. -->
+        <div class="fm-printer" id="fm-printer">
+            <div class="fm-printer__caption fm-print-only">
+                <span class="fm-printer__live">Terminal de ingressos</span>
+                <span id="fm-printer-status">Aguardando respostas</span>
+            </div>
+            <div class="fm-printer__stage">
+                <div class="fm-printer__device fm-print-only" aria-hidden="true">
+                    <div class="fm-printer__face"><div class="fm-printer__slot"></div></div>
+                    <span class="fm-printer__led" id="fm-printer-led"></span>
+                    <span class="fm-printer__mark">ASIMOV / BF26</span>
+                </div>
+                <div class="fm-printer__lip fm-print-only" aria-hidden="true"></div>
+                <div class="fm-printer__feed" id="fm-feed">
+                    <div class="fm-ticket" id="fm-ticket">
+                        <!-- Topo: título do evento. mesmo fundo do resto do ingresso -->
+                        <div class="fm-t-hero">
+                            <span class="fm-t-guilloche" aria-hidden="true"></span>
+                            <div class="fm-t-head">
+                                <span class="fm-t-logo" role="img" aria-label="Asimov"></span>
+                                <span class="fm-t-num">nº <span id="fm-tnum">—</span></span>
+                            </div>
+                            <div class="fm-t-heading">
+                                <!-- Lettering da campanha no lugar do título em texto (alt = título do fluxo) -->
+                                <h2 class="fm-t-title">
+                                    <img class="fm-t-logo-bf" id="fm-ttitle" src="/img/black-friday-logo.webp" alt="Black Friday" width="380" height="157" decoding="async" />
+                                </h2>
+                                <p class="fm-t-subtitle" id="fm-tsubtitle" hidden></p>
+                            </div>
+                        </div>
+                        <div class="fm-t-perf" aria-hidden="true"></div>
+                        <!-- Base: dados e respostas em duas colunas -->
+                        <div class="fm-t-body">
+                            <div class="fm-t-grid" id="fm-tmeta" hidden>
+                                <div class="fm-t-cell"><span class="fm-t-label">Data</span><span class="fm-t-value" id="fm-tdate"></span></div>
+                                <div class="fm-t-cell"><span class="fm-t-label">Horário</span><span class="fm-t-value" id="fm-ttime"></span></div>
+                            </div>
+                            <div class="fm-t-grid" id="fm-tfields"></div>
+                            <div class="fm-t-foot">
+                                <div class="fm-t-cell">
+                                    <span class="fm-t-label">Código de acesso</span>
+                                    <span class="fm-t-code">BF26</span>
+                                </div>
+                                <div class="fm-t-cell">
+                                    <span class="fm-t-label">Começa em</span>
+                                    <span class="fm-t-count" id="fm-tcount" role="timer" aria-live="off">—</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fm-t-glare" aria-hidden="true"></span>
+                        <div class="fm-stamp" aria-hidden="true"><div>Vaga<br>garantida<small id="fm-stamp-date"></small></div></div>
+                    </div>
+                </div>
+                <div class="fm-printer__empty fm-print-only" id="fm-printer-empty">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a3 3 0 0 0 0 6v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3a3 3 0 0 0 0-6V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg>
+                    <p>Suas respostas alimentam o terminal.<br>Seu ingresso é emitido aqui ao terminar.</p>
+                </div>
+            </div>
+            <div class="fm-printer__footer fm-print-only">
+                <span>Emissão digital · Asimov</span>
+                <span class="fm-printer__count" id="fm-printer-count">—</span>
+            </div>
+        </div>
+    </aside>
+
+</main>
+
+<script src="/js/public-common.js?v=1"></script>
+<script src="/js/form.js?v=1"></script>
+</body>
+</html>

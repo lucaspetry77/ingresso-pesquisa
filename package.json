@@ -1,0 +1,12 @@
+{
+  "name": "ingresso-pesquisa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Frontend dos fluxos de pesquisa com ingresso normal e ingresso emitido da Asimov.",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "check": "node tools/check.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

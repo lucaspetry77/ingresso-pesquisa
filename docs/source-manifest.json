@@ -1,0 +1,80 @@
+{
+  "repository": "asimov_typebot",
+  "sourceCommit": "dbc25139ce9ac0f1084261efea5f23b15f266c19",
+  "unchangedFiles": [
+    {
+      "file": "frontend/css/styles.css",
+      "source": "frontend/css/styles.css",
+      "sha256": "abaeb71dd7823cedebd2cc826df0e5915ad2a99223abc7f5395887e98c51f850"
+    },
+    {
+      "file": "frontend/css/form.css",
+      "source": "frontend/css/form.css",
+      "sha256": "0f59629cbafa60ab11b8e1da37e765a592ff94787e8130f3422aba68bdb25da2"
+    },
+    {
+      "file": "frontend/js/theme.js",
+      "source": "frontend/js/theme.js",
+      "sha256": "535f2111bf260d6847eb4798864bb93d469395de5b362786043d0295555f0015"
+    },
+    {
+      "file": "frontend/js/ticket-cloth.js",
+      "source": "frontend/js/ticket-cloth.js",
+      "sha256": "f3880bb6e800267099373ff181dd33d8a70138a836517b05f9b657ffe6f4b006"
+    },
+    {
+      "file": "frontend/js/ticket-cloth.LICENSE.md",
+      "source": "frontend/js/ticket-cloth.LICENSE.md",
+      "sha256": "2a9a221a47f581d7984ca3a568e38fb17d5b6e43164db3f3482b4767c8e8e5b3"
+    },
+    {
+      "file": "frontend/favicon.svg",
+      "source": "frontend/favicon.svg",
+      "sha256": "86e66e53b618665651eca3f934d06ccb59bb5479e75ff03020f608d785d7715d"
+    },
+    {
+      "file": "frontend/img/black-friday-logo.webp",
+      "source": "frontend/img/black-friday-logo.webp",
+      "sha256": "f70986f82449b8c23c3bdf150e49d8b09ba5165801b42729f55c764870021be4"
+    },
+    {
+      "file": "frontend/img/ticket-guilloche.svg",
+      "source": "frontend/img/ticket-guilloche.svg",
+      "sha256": "c53f4831ee516c66bad38cd58a2c495d5d7e7cf27650ed0e6d1b3d6034246b8c"
+    },
+    {
+      "file": "frontend/ds/themes.js",
+      "source": "frontend/ds/themes.js",
+      "sha256": "e44d0893c08fff414692e1960c37a9e67bf31a1d1f5b95a98101242059843856"
+    },
+    {
+      "file": "frontend/ds/asimov-logo.svg",
+      "source": "frontend/ds/asimov-logo.svg",
+      "sha256": "e7f0b5fc08b164d5f796c6d07d7a9793b021c611f48619e84322cec92f4849ae"
+    },
+    {
+      "file": "frontend/ds/fonts/inter-latin-400-normal.woff2",
+      "source": "frontend/ds/fonts/inter-latin-400-normal.woff2",
+      "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+    },
+    {
+      "file": "frontend/ds/fonts/inter-latin-500-normal.woff2",
+      "source": "frontend/ds/fonts/inter-latin-500-normal.woff2",
+      "sha256": "f3779f1efccc4bdcdf9c0a02ab95bf6bd092ed09c48c08cedc725889edd1d19f"
+    },
+    {
+      "file": "frontend/ds/fonts/inter-latin-600-normal.woff2",
+      "source": "frontend/ds/fonts/inter-latin-600-normal.woff2",
+      "sha256": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a"
+    }
+  ],
+  "adaptedFiles": [
+    "frontend/form.html",
+    "frontend/js/form.js",
+    "frontend/js/public-common.js"
+  ],
+  "flows": [
+    "pesquisa-leads-bf-2026",
+    "pesquisa-leads-bf-2026-emissao"
+  ]
+}
